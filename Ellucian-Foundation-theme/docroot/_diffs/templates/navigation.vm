@@ -1,0 +1,46 @@
+<nav class="$nav_css_class top-bar" id="navigation" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">My Site</a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+	<!--<h1>
+		<span>#language("navigation")</span>
+	</h1>-->
+
+
+    <!-- place the gradient in a div separate than the ul to fix menu issues in IE -->
+   <!-- <div class="navigation-gradient"> -->
+    
+    <section class="top-bar-section">
+	<ul class="left">
+		#foreach ($nav_item in $nav_items)
+			#if ($nav_item.isSelected())
+				<li class="selected">
+			#else
+				<li>
+			#end
+				<a href="$nav_item.getURL()" $nav_item.getTarget()><span tabindex="0">$nav_item.icon() $nav_item.getName()</span></a>
+
+				#if ($nav_item.hasChildren())
+					<ul class="child-menu">
+						#foreach ($nav_child in $nav_item.getChildren())
+							#if ($nav_child.isSelected())
+								<li class="selected">
+							#else
+								<li>
+							#end
+								<a href="$nav_child.getURL()" $nav_child.getTarget()>$nav_child.getName()</a>
+							</li>
+						#end
+					</ul>
+				#end
+			</li>
+		#end
+	</ul>
+	</section>
+	
+</nav>
