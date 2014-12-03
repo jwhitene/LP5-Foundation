@@ -21,9 +21,12 @@ Name your theme, choose your liferay-plugin-ins SDK and the java/tomcat runtime 
 On the next screen, use velocity templates if you want to use what Ellucian uses.  
 
 You'll have this directory structure to begin with:
+
 Theme-Name
 build.xml
+
 docroot
+
 ---_diffs
 ---css
 ---images
